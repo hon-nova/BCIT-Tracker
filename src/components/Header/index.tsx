@@ -12,9 +12,7 @@ export function Header({ assnname,setAssnname, onAdd }: HeaderProps) {
 
    function isEmptyInput():boolean{
       return !assnname || assnname.trim()===''
-   }
-   console.log(`isEmptyInput: `,isEmptyInput())
-   console.log(`userinput as assnname: `,assnname)
+   } 
 
    return (
     <header className={styles.header}>

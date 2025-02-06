@@ -8,7 +8,6 @@ function App() {
    const [assignments, setAssignments ]= useState<AssignmentObjProps[]>([])
    const [countCompleted, setCountCompleted ] = useState<number>(0)
 
-   console.log(`assnname @App: `,assnname);
    /**
     * 
    id:string,
@@ -31,14 +30,11 @@ function App() {
       const updateAssns = assignments.filter((item:AssignmentObjProps)=>item.id!==id)
       setAssignments(updateAssns)
    }
-   console.log(`assignments @App: `,assignments);
    
    function handleCheckedBtn(id:string){
-      /* 2 things to happen:
-         1. isChecked
-         2. update countCompleted
-      */
+      
      setAssignments((preAssignments)=> {
+
          const updateAssignmentsWithChecked = preAssignments.map((item:AssignmentObjProps)=> item.id ===id ? {...item, isChecked: !item.isChecked} : item )
 
          const updateCountCompleted = updateAssignmentsWithChecked.filter((item:AssignmentObjProps)=>item.isChecked).length
@@ -47,11 +43,9 @@ function App() {
          return updateAssignmentsWithChecked
      })
       
-   }
-   console.log(`assignments @Assignments: `,assignments)
-   console.log(`countCompleted: `,countCompleted);
+   }   
    
-  return (
+   return (
     <>
       <Header 
          assnname={assnname}

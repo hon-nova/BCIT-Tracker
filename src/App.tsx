@@ -8,13 +8,6 @@ function App() {
    const [assignments, setAssignments ]= useState<AssignmentObjProps[]>([])
    const [countCompleted, setCountCompleted ] = useState<number>(0)
 
-   /**
-    * 
-   id:string,
-	assnname:string|null,
-	isChecked: boolean,
-	onDelete: (id:string)=>void
-    */
    function handleAdd(assnname: string){
       const newAssignment = {
          id: crypto.randomUUID(),

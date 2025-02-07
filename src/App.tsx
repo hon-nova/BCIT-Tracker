@@ -20,7 +20,11 @@ function App() {
       setAssignments((preAssignments)=>([newAssignment,...preAssignments]))
    }
    function handleDelete(id:string){
+      console.log(`Before delete: `,assignments);
+      
       const updateAssns = assignments.filter((item:AssignmentObjProps)=>item.id!==id)
+      console.log(`after filtering: `,updateAssns);
+      
       setAssignments(updateAssns)
    }
    
@@ -37,6 +41,8 @@ function App() {
      })
       
    }   
+   console.log(`All assignments: `, assignments);
+   
    
    return (
     <>
@@ -45,11 +51,7 @@ function App() {
          setAssnname={setAssnname}
          onAdd={handleAdd}
          />
-      {/* 
-         type AssignmentsProps = {
-         assignments: AssignmentObjProps[],
-         onDelete: (id:string)=>void
-      } */}
+      
       <Assignments 
          assignments={assignments}        
          countCompleted={countCompleted}/>

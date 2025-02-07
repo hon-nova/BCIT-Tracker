@@ -8,7 +8,7 @@ type AssignmentsProps = {
 }
 
 export function Assignments({ assignments, countCompleted }: AssignmentsProps) {
-  return (
+   return (
     <section className={styles.assignments}>
       <header className={styles.header}>
         <div>
@@ -23,20 +23,15 @@ export function Assignments({ assignments, countCompleted }: AssignmentsProps) {
       </header>
 
       <div className={styles.list}>
-        {assignments.length >0 && assignments.map((item:AssignmentObjProps)=>(
-          <div key={item.id}>
-            {/* id:string,
-	            assnname:string|null,
-	            isChecked: boolean,
-	            onDelete: (id:string)=>void
-               onCheckedBtn: (id:string)=>void */}
-             <Assignment 
-                id={item.id}
-                assnname={item.assnname}
-                isChecked={item.isChecked}
-                onDelete={item.onDelete}
-                onCheckedBtn={item.onCheckedBtn}/>
-          </div>
+        {assignments.length >0 && assignments.map((item:AssignmentObjProps)=>( <div  key={item.id}>
+            <Assignment            
+              id={item.id}
+              assnname={item.assnname}
+              isChecked={item.isChecked}
+              onDelete={item.onDelete}
+              onCheckedBtn={item.onCheckedBtn}/>     
+        </div>     
+               
         ))}
        
       </div>
